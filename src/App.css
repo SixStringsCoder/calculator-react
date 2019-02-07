@@ -2,31 +2,89 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#calc-body {
+  margin: 20px auto;
+  width: 300px;
+  height: 350px;
+  padding: 20px;
+  background: linear-gradient(to right, #39393a, #1e1c1f);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0 0 10px gray;
 }
 
-.App-link {
-  color: #61dafb;
+#calc-section {
+  width: 96%;
+  height: 20%;
+/*   margin: 10px; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#view-screen {
+  width: 100%;
+  height: 60px;
+  background-color: #a2b074;
+  border-radius: 10px;
+  border: none;
+  box-shadow: inset 1px 1px 2px 1px black;
 }
+
+#calc-btn-section{
+  width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+    "mc mplus div times"
+    "7 8 9 minus"
+    "4 5 6 plus"
+    "1 2 3 equals"
+    "zero zero dec equals";
+}
+
+button {
+  width: 65px;
+/*   height: 35px; */
+  padding: 5px;
+/*   margin: 3px 5px; */
+  font-size: 1.4rem;
+  color: #FFF;
+  background-color: #58595b;
+  border: none;
+  box-shadow: 0 2px 1px black;
+}
+
+.black-btn {
+  background-color: #000;
+  font-size: 1.9rem;
+}
+.gray-btn,
+#div-sign,
+#x-sign {
+  font-size: 1.9rem;
+}
+.red-btn {
+  background-color: #f4591d;
+}
+
+/* BUTTON POSITIONS*/
+#mc { grid-area: mc; }
+#mplus { grid-area: mplus; }
+#1 { grid-area: one; }
+#2 { grid-area: two; }
+#3 { grid-area: three; }
+#4 { grid-area: four; }
+#5 { grid-area: five; }
+#6 { grid-area: six; }
+#7 { grid-area: seven; }
+#8 { grid-area: eight; }
+#9 { grid-area: nine; }
+#div-sign { grid-area: div; }
+#x-sign { grid-area: times; }
+#equals { grid-area: equals; font-size: 2.5rem; height: 100px; }
+#zero { grid-area: zero; width: 138px; }
+#decimal { grid-area: dec; }
