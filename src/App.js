@@ -5,20 +5,22 @@ import './App.css';
 
 class Calculator extends Component {
   state = {
-    total: 0,
+    entry: [],
     equation: [],
+    total: null,
   }
 
   clearScreen = () => {
     this.setState({
-      total: 0,
+      entry: [],
       equation: [],
+      total: 0
     });
   }
 
   enterEquation = (event) => {
     this.setState({
-        total: event.target.value,
+        entry: [...this.state.entry, event.target.value],
         equation: [...this.state.equation, event.target.value]
     });
   }
@@ -35,7 +37,10 @@ class Calculator extends Component {
         <section id="view-screen-container">
           <input id="view-screen"
                  type="text"
-                 value={this.state.total}
+                 value={this.state.total === null ?
+                        this.state.entry.join('')
+                        :
+                        this.state.total}
                  pattern="[\d\+\-\*\/\.]*" />
         </section>
         <section id="calc-btn-section">
